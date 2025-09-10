@@ -40,6 +40,7 @@ items_ul.addEventListener("click", (e) => {
 // Clears all tasks in single click:
 btn2.addEventListener("click", () => {
     items_ul.innerHTML = "";
+    saveData();
 })
 
 
