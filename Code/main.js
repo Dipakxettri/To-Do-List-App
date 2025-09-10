@@ -1,7 +1,11 @@
+// Selecting HTML emements:
 const input = document.getElementById("input");
 const btn = document.getElementById("btn");
+const btn2 = document.getElementById("btn-2");
 const items_ul = document.getElementById("tasks");
 
+
+// Adding task:
 btn.addEventListener("click", () => {
 
     if (input.value !== "") {
@@ -18,6 +22,8 @@ btn.addEventListener("click", () => {
     saveData();
 })
 
+
+// Checking and deleting task:
 items_ul.addEventListener("click", (e) => {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
@@ -30,6 +36,14 @@ items_ul.addEventListener("click", (e) => {
     }
 })
 
+
+// Clears all tasks in single click:
+btn2.addEventListener("click", () => {
+    items_ul.innerHTML = "";
+})
+
+
+// Local memory related work:
 function saveData(){
     localStorage.setItem("data", items_ul.innerHTML);
 }
